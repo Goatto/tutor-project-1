@@ -13,6 +13,5 @@ public class ScienceMagazine extends Magazine
     public String getFieldOfStudy()
     {
         return fieldOfStudy;
-
     }
 }
