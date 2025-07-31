@@ -1,5 +1,7 @@
 package project.model;
 
+import static java.lang.Character.toUpperCase;
+
 public abstract class Person
 {
     private String firstName;
@@ -27,20 +29,39 @@ public abstract class Person
             {
                 return "Brak danych";
             }
-            if (firstName == null)
-            {
+            if (firstName == null) {
                 return lastName;
             }
-            if (lastName == null)
-            {
+            if (lastName == null) {
                 return firstName;
             }
         }
         return "Blad";
     }
 
-    private formatName(String name)
+    private String formatName(String name)
     {
-        
+        if (name == null)
+        {
+            return "Blad";
+        }
+        else
+        {
+            return name.substring(0, 1).toUpperCase() + name.substring(1);
+        }
     }
+    public void setFirstName(String firstName)
+    {
+        this.firstName = formatName(firstName);
+    }
+    public void setLastName(String lastName)
+    {
+        this.lastName = formatName(lastName);
+    }
+    public Person(String firstName, String lastName)
+    {
+        setFirstName(firstName);
+        setLastName(lastName);
+    }
+    public abstract String info();
 }
