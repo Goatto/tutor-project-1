@@ -1,4 +1,12 @@
 package project.model.item;
 
-public interface LibraryItem {
+public interface LibraryItem
+{
+    String getTitle();
+
+    default String info()
+    {
+        return "Tytul:" + getTitle();
+    }
+
 }
