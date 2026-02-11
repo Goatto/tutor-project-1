@@ -17,8 +17,14 @@ public abstract class Person
 
     private String formatName(String name)
     {
-        // Zamienia pierwszą literę na dużą i resztę zwraca normalnie
-        return name.substring(0, 1).toUpperCase() + name.substring(1);
+        if (name != null) {
+            // Zamienia pierwszą literę na dużą i resztę zwraca normalnie
+            return name.substring(0, 1).toUpperCase() + name.substring(1);
+        }
+        else
+        {
+            return "";
+        }
     }
 
     public Person(String firstName, String lastName)
@@ -54,7 +60,8 @@ public abstract class Person
         {
             return getFirstName();
         }
-        else {
+        else
+        {
             return "";
         }
     }

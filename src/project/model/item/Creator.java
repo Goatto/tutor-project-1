@@ -47,7 +47,7 @@ public class Creator extends Person {
         return this.deathDate;
     }
 
-    public String getFullname()
+    public String getFullName()
     {
         if(getAlias()!=null)
         {
@@ -55,7 +55,7 @@ public class Creator extends Person {
         }
         else
         {
-            return getFullName();
+            return super.getFullName();
         }
     }
 
@@ -63,11 +63,17 @@ public class Creator extends Person {
     public String info() {
         if(getDeathDate()!=null)
         {
-            return getAlias() + " (" + getFullname() + "), " + getBirthDate() + '-' + getDeathDate();
+            return getAlias() + " (" + getFullName() + "), " + getBirthDate() + '-' + getDeathDate();
         }
         else
         {
-            return getAlias() + " (" + getFullname() + "), " + getBirthDate();
+            return getAlias() + " (" + getFullName() + "), " + getBirthDate();
         }
+    }
+
+    @Override
+    public String toString()
+    {
+        return getFullName();
     }
 }

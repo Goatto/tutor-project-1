@@ -9,12 +9,11 @@ public interface Authored {
     {
         String prefix = "";
         StringBuilder allNames = new StringBuilder();
+        for (Author autor : getAuthors())
         {
-            for (Author autor : getAuthors()) {
-                allNames.append(prefix);
-                prefix = ", ";
-                allNames.append(autor.getFullName());
-            }
+            allNames.append(prefix);
+            prefix = ", ";
+            allNames.append(autor.getFullName());
         }
         return allNames.toString();
     }
